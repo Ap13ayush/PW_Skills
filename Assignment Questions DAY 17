@@ -1,0 +1,65 @@
+QUESTION 1:
+What is Immutable String in Java? with example 
+A String is defined as a sequence or an array of characters. Strings are treated as objects in the Java programming language. The term "immutable string" in Java refers to a string object that cannot be altered, but the reference to the object can be changed. Every time we make a modification, a new instance of that string is created and the previous value is copied to the new String with the change. The String class is marked final to prevent overriding the functionality of its methods.
+In Java the String class and all wrapper classes which include Boolean, Character, Byte, Short, Integer, Long, Float, and Double are immutable. A user is free to create immutable classes of their own.
+CODE:-
+class Testimmutablestring {
+    public static void main(String args[]) {
+        String s = "Sachin";
+        s.concat(" Tendulkar"); // concat() method appends the string at the end
+        System.out.println(s); // will print Sachin because strings are immutable objects
+    }
+}
+
+
+QUESTION 2: REVERSE THE STRING
+
+public class ReverseString {
+    public static void main(String[] args) {
+        String input = "PWSKILLS";
+        StringBuilder input1 = new StringBuilder();
+        input1.append(input);
+        input1 = input1.reverse();
+        System.out.println(input1);
+    }
+}
+
+QUESTION 3:
+public class ReverseSentence {
+    public static void main(String[] args) {
+        String input = "think twice";
+        char[] inputChars = input.toCharArray();
+        int start = 0;
+        for (int i = 0; i < inputChars.length; i++) {
+            if (inputChars[i] == ' ') {
+                reverse(inputChars, start, i - 1);
+                start = i + 1;
+            }
+        }
+        reverse(inputChars, start, inputChars.length - 1);
+        System.out.println(new String(inputChars));
+    }
+
+    private static void reverse(char[] arr, int start, int end) {
+        while (start < end) {
+            char temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
+
+
+QUESTION 4
+public class SortString {
+    public static void main(String[] args) {
+        String input = "PWSKILLS";
+        char[] chars = input.toCharArray();
+        java.util.Arrays.sort(chars);
+        String sorted = new String(chars);
+        System.out.println(sorted);
+    }
+}
+
